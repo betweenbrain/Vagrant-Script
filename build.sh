@@ -164,6 +164,15 @@ sudo apt-get -y install linux-headers-$(uname -r) build-essential dkms
 #
 sudo apt-get clean
 #
+#
+echo
+echo "One final hurrah"
+echo "--------------------------------------------------------------"
+#
+#
+aptitude update && aptitude -y safe-upgrade
+#
+#
 sudo reboot
 #
 #
