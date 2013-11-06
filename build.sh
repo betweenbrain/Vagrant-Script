@@ -9,7 +9,7 @@ aptitude update && aptitude -y safe-upgrade
 echo "Setting the hostname."
 echo "---------------------------------------------------------------"
 #
-echo "vagrant-debian-squeeze" > /etc/hostname
+echo "squeeze" > /etc/hostname
 hostname -F /etc/hostname
 #
 #
@@ -18,7 +18,7 @@ echo "---------------------------------------------------------------"
 #
 groupadd admin
 #
-sudo usermod -G admin vagrant
+usermod -G admin vagrant
 #
 echo "Add admin group to sudoers and make passwordless."
 echo "---------------------------------------------------------------"
@@ -49,30 +49,30 @@ echo "Install puppet."
 echo "---------------------------------------------------------------"
 #
 #
-sudo apt-get -y install puppet puppetmaster
+apt-get -y install puppet puppetmaster
 #
 #
 echo "Install openssh-server packages."
 echo "---------------------------------------------------------------"
 #
 #
-sudo apt-get -y install openssh-server
+apt-get -y install openssh-server
 #
 #
 echo "Install misc packages."
 echo "---------------------------------------------------------------"
 #
 #
-sudo apt-get -y install git-core
+apt-get -y install git-core
 #
 #
 echo "Install Apache2."
 echo "---------------------------------------------------------------"
 #
 #
-sudo apt-get -y install apache2
+apt-get -y install apache2
 #
-sudo a2enmod rewrite deflate
+a2enmod rewrite deflate
 #
 #
 echo "
@@ -85,16 +85,16 @@ echo "Installing mysql"
 echo "---------------------------------------------------------------"
 #
 export DEBIAN_FRONTEND=noninteractive
-sudo apt-get install -y mysql-server
+apt-get install -y mysql-server
 #
 #
-sudo apt-get install -y php5 php-pear php5-suhosin php5-cli php5-mysql php5-curl php5-memcache
+apt-get install -y php5 php-pear php5-suhosin php5-cli php5-mysql php5-curl php5-memcache
 #
 #
 /etc/init.d/apache2 restart
 #
 #
-sudo mkdir /var/www/adminer
+mkdir /var/www/adminer
 #
 #
 wget http://www.adminer.org/latest.php -P /var/www/index.php -o index.php
@@ -104,7 +104,7 @@ echo "Install vagrant's public keys."
 echo "---------------------------------------------------------------"
 #
 #
-sudo chown vagrant:vagrant /var/www
+chown vagrant:vagrant /var/www
 find /var/www/ -type d -exec chmod 755 {} \;
 find /var/www/ -type f -exec chmod 644 {} \;
 #
@@ -126,9 +126,9 @@ echo "Install virtual box guest additions."
 echo "---------------------------------------------------------------"
 #
 #
-sudo apt-get -y install linux-headers-$(uname -r) build-essential dkms
+apt-get -y install linux-headers-$(uname -r) build-essential dkms
 #
-sudo apt-get clean
+apt-get clean
 #
 #
 echo
@@ -139,6 +139,6 @@ echo "--------------------------------------------------------------"
 aptitude update && aptitude -y safe-upgrade
 #
 #
-sudo reboot
+reboot
 #
 #
