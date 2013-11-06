@@ -9,7 +9,8 @@ aptitude update && aptitude -y safe-upgrade
 echo "Setting the hostname."
 echo "---------------------------------------------------------------"
 #
-hostname vagrant-debian-squeeze
+echo "vagrant-debian-squeeze" > /etc/hostname
+hostname -F /etc/hostname
 #
 #
 echo "Creating admin group and Vagrant user."
