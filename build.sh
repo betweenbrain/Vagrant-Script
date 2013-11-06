@@ -70,7 +70,7 @@ echo "Install Apache2."
 echo "---------------------------------------------------------------"
 #
 #
-sudo apt-get install apache2
+sudo apt-get -y install apache2
 #
 sudo a2enmod rewrite deflate
 #
@@ -81,19 +81,14 @@ Group vagrant
 " >> /etc/apache2/httpd.conf
 #
 #
-echo "Installing debconf utilities"
+echo "Installing mysql"
 echo "---------------------------------------------------------------"
 #
-aptitude install -y debconf-utils
+export DEBIAN_FRONTEND=noninteractive
+sudo apt-get install -y mysql-server
 #
 #
-echo mysql-server mysql-server/root_password password | sudo debconf-set-selections
-echo mysql-server mysql-server/root_password_again password | sudo debconf-set-selections
-#
-sudo apt-get install mysql-server
-#
-#
-sudo apt-get install php5 php-pear php5-suhosin php5-cli php5-mysql php5-curl php5-memcache
+sudo apt-get install -y php5 php-pear php5-suhosin php5-cli php5-mysql php5-curl php5-memcache
 #
 #
 /etc/init.d/apache2 restart
