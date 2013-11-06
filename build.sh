@@ -33,8 +33,8 @@ echo "Install ruby and chef."
 echo "---------------------------------------------------------------"
 #
 #
-apt-get -y update
-apt-get -y install build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev
+apt-get -q -y update
+apt-get -q -y install build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev
 cd /tmp
 wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p125.tar.gz
 tar -xvzf ruby-1.9.3-p125.tar.gz
@@ -49,28 +49,28 @@ echo "Install puppet."
 echo "---------------------------------------------------------------"
 #
 #
-apt-get -y install puppet puppetmaster
+apt-get -q -y install puppet puppetmaster
 #
 #
 echo "Install openssh-server packages."
 echo "---------------------------------------------------------------"
 #
 #
-apt-get -y install openssh-server
+apt-get -q -y install openssh-server
 #
 #
 echo "Install misc packages."
 echo "---------------------------------------------------------------"
 #
 #
-apt-get -y install git-core
+apt-get -q -y install git-core
 #
 #
 echo "Install Apache2."
 echo "---------------------------------------------------------------"
 #
 #
-apt-get -y install apache2
+apt-get -q -y install apache2
 #
 a2enmod rewrite deflate
 #
@@ -85,7 +85,7 @@ echo "Installing mysql"
 echo "---------------------------------------------------------------"
 #
 export DEBIAN_FRONTEND=noninteractive
-apt-get install -y mysql-server
+apt-get -q -y install mysql-server
 #
 #
 apt-get install -y php5 php-pear php5-suhosin php5-cli php5-mysql php5-curl php5-memcache
@@ -126,7 +126,7 @@ echo "Install virtual box guest additions."
 echo "---------------------------------------------------------------"
 #
 #
-apt-get -y install linux-headers-$(uname -r) build-essential dkms
+apt-get -q -y install linux-headers-$(uname -r) build-essential dkms
 #
 apt-get clean
 #
