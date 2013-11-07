@@ -40,6 +40,7 @@ chown vagrant:vagrant /var/www
 echo "Installing mysql"
 echo "---------------------------------------------------------------"
 #
+#
 export DEBIAN_FRONTEND=noninteractive
 apt-get -q -y install mysql-server
 #
