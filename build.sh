@@ -66,6 +66,4 @@ echo "--------------------------------------------------------------"
 aptitude update && aptitude -y safe-upgrade
 #
 #
-reboot
-#
-#
+
