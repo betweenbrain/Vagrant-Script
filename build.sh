@@ -27,11 +27,15 @@ echo "
 User vagrant
 Group vagrant
 " >> /etc/apache2/httpd.conf
+#
+#
 echo "Make vagrant owner of /var/www"
 echo "--------------------------------------------------------------"
 #
 #
 chown vagrant:vagrant /var/www
+find /var/www/ -type d -exec chmod 755 {} \;
+find /var/www/ -type f -exec chmod 644 {} \;
 #
 #
 /etc/init.d/apache2 restart
