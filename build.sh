@@ -27,6 +27,14 @@ echo "
 User vagrant
 Group vagrant
 " >> /etc/apache2/httpd.conf
+echo "Make vagrant owner of /var/www"
+echo "--------------------------------------------------------------"
+#
+#
+chown vagrant:vagrant /var/www
+#
+#
+/etc/init.d/apache2 restart
 #
 #
 echo "Installing mysql"
@@ -42,17 +50,13 @@ apt-get install -y php5 php-pear php5-suhosin php5-cli php5-mysql php5-curl php5
 /etc/init.d/apache2 restart
 #
 #
+echo "Set up Adminer"
+echo "---------------------------------------------------------------"
+#
 mkdir /var/www/adminer
 #
 #
 wget http://www.adminer.org/latest.php -P /var/www/index.php -o index.php
-#
-#
-echo "Make vagrant owner of /var/www"
-echo "--------------------------------------------------------------"
-#
-#
-chown vagrant:vagrant /var/www
 #
 #
 echo "One final hurrah"
