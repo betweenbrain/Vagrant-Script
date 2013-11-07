@@ -54,9 +54,9 @@ echo "Set up Adminer"
 echo "---------------------------------------------------------------"
 #
 mkdir /var/www/adminer
-#
-#
-wget http://www.adminer.org/latest.php -P /var/www/index.php -o index.php
+cd /var/www/adminer
+wget http://www.adminer.org/latest.php
+mv /var/www/adminer/latest.php /var/www/adminer/index.php
 #
 #
 echo "One final hurrah"
