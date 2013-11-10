@@ -94,10 +94,8 @@ apt-get install -y php5 php-pear php5-suhosin php5-cli php5-mysql php5-curl php5
 /etc/init.d/apache2 restart
 #
 #
-mkdir /var/www/adminer
-#
-#
-wget http://www.adminer.org/latest.php -P /var/www/index.php -o index.php
+cd /var/www
+git clone https://github.com/joomla/joomla-cms.git .
 #
 #
 echo "Install vagrant's public keys."
